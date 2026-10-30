@@ -1,0 +1,14 @@
+# Environment
+.venv/
+.env
+
+# Python
+__pycache__/
+*.pyc
+
+# IDE
+.idea/
+
+# Data (CSV out of Git)
+data/raw/*
+!data/raw/.gitkeep
