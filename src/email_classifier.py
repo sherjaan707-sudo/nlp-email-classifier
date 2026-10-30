@@ -110,3 +110,19 @@ for email in new_emails:
     print(prediction, "->", email)
 
 
+# 7. Compare two emails from the dataset
+# The medium model has word vectors, where words with similar meanings
+# sit close together. The small model doesn't, so its scores aren't useful.
+nlp_md = spacy.load("en_core_web_md")
+
+# I compare the original text, because word vectors work on real words.
+email_1 = df["text"][0]
+email_2 = df["text"][1]
+
+# similarity() averages the word vectors of each email, so it ignores
+# word order. "refund, not a bill" and "bill, not a refund" score about the same.
+similarity = nlp_md(email_1).similarity(nlp_md(email_2))
+
+print("\nEmail 1:", email_1)
+print("Email 2:", email_2)
+print("Similarity:", round(similarity, 2))
