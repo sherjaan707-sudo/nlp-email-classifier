@@ -98,7 +98,8 @@ print("\nAccuracy:", round(accuracy, 2))
 new_emails = [
     "I was billed twice this month.",
     "The app keeps crashing when I log in.",
-    "I want my money back for the cancelled order.",
+    "Please send my money back for the order I returned.",
+
 ]
 
 print("\nPredictions for new emails:")
